@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DemoAzureAd.Model.Migrations
 {
-    [DbContext(typeof(PersonnelContext))]
+    [DbContext(typeof(PersonalLogContext))]
     [Migration("20190908020527_InitialCreate")]
     partial class InitialCreate
     {

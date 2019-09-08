@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DemoAzureAd.Model.Migrations
 {
-    [DbContext(typeof(PersonnelContext))]
+    [DbContext(typeof(PersonalLogContext))]
     partial class PersonnelContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

@@ -3,14 +3,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DemoAzureAd.Model
 {
-    public class PersonnelContext : DbContext
+    public class PersonalLogContext : DbContext
     {
-        public PersonnelContext(DbContextOptions<PersonnelContext> options)
+        public PersonalLogContext(DbContextOptions<PersonalLogContext> options)
             :base(options)
         {
             var conn = (SqlConnection)Database.GetDbConnection();
         }
 
-        public DbSet<LogEntry> CrewLogs { get; set; }
+        public DbSet<LogEntry> PerosnalLogs { get; set; }
     }
 }

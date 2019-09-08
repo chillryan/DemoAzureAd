@@ -3,14 +3,14 @@ using Microsoft.EntityFrameworkCore.Design;
 
 namespace DemoAzureAd.Model.Host
 {
-    public class PersonnelContextFactory : IDesignTimeDbContextFactory<PersonnelContext>
+    public class PersonnelContextFactory : IDesignTimeDbContextFactory<PersonalLogContext>
     {
-        public PersonnelContext CreateDbContext(string[] args)
+        public PersonalLogContext CreateDbContext(string[] args)
         {
-            var optionsBuilder = new DbContextOptionsBuilder<PersonnelContext>();
-            optionsBuilder.UseSqlServer("Data Source=(localdb)\\msqllocaldb;Initial Catalog=CrewLogs;Trusted_Connection=true;MultipleActiveResultSets=true");
+            var optionsBuilder = new DbContextOptionsBuilder<PersonalLogContext>();
+            optionsBuilder.UseSqlServer("Data Source=(localdb)\\msqllocaldb;Initial Catalog=PersonalLog;Trusted_Connection=true;MultipleActiveResultSets=true");
 
-            return new PersonnelContext(optionsBuilder.Options);
+            return new PersonalLogContext(optionsBuilder.Options);
         }
     }
 }
