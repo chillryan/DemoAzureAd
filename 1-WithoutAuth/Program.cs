@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace DemoAzureAdWithoutAuth.Site
+namespace DemoAzureAd.Site
 {
     public class Program
     {

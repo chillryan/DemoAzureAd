@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DemoAzureAdWithoutAuth.Site
+namespace DemoAzureAd.Site
 {
     public class Startup
     {
@@ -28,11 +28,9 @@ namespace DemoAzureAdWithoutAuth.Site
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<Personnel>(options =>
-            {
-                options.UseSqlServer(Configuration.GetConnectionString("PersonnelConnection"));
-            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddDbContext<PersonalLogContext>(options => options.UseSqlServer(Configuration.GetConnectionString("CrewLogConnection")));
+            services.BuildServiceProvider().GetService<PersonalLogContext>().Database.Migrate();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,7 +42,7 @@ namespace DemoAzureAdWithoutAuth.Site
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
