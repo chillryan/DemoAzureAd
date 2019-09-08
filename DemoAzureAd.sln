@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-WithoutAuth", "1-WithoutA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoAzureAd.Site", "1-WithoutAuth\DemoAzureAd.Site.csproj", "{D8600093-9B01-40E6-991C-0692510135E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoAzureAd.Model.Host", "DemoAzureAd.Model.Host\DemoAzureAd.Model.Host.csproj", "{40E80272-6B32-446D-96B9-E0FF9B48DBB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{D8600093-9B01-40E6-991C-0692510135E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8600093-9B01-40E6-991C-0692510135E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8600093-9B01-40E6-991C-0692510135E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40E80272-6B32-446D-96B9-E0FF9B48DBB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40E80272-6B32-446D-96B9-E0FF9B48DBB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40E80272-6B32-446D-96B9-E0FF9B48DBB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40E80272-6B32-446D-96B9-E0FF9B48DBB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
