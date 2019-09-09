@@ -4,14 +4,16 @@ using DemoAzureAd.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DemoAzureAd.Model.Migrations
 {
     [DbContext(typeof(PersonalLogContext))]
-    partial class PersonnelContextModelSnapshot : ModelSnapshot
+    [Migration("20190908191908_Add author")]
+    partial class Addauthor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,7 +38,7 @@ namespace DemoAzureAd.Model.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Logs");
+                    b.ToTable("PerosnalLogs");
                 });
 #pragma warning restore 612, 618
         }

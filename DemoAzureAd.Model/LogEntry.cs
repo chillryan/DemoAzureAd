@@ -8,12 +8,15 @@ namespace DemoAzureAd.Model
         [Key]
         public Guid Id { get; set; }
 
-        public DateTime Date { get; private set; } = DateTime.Now;
+        public AccessLevel AccessLevel { get; set; }
+
+        public string Author { get; set; }
 
         public string Content { get; set; }
 
-        public string Title { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime Date { get; private set; } = DateTime.Now;
 
-        public AccessLevel AccessLevel {get;set;}
+        public string Title { get; set; }
     }
 }
