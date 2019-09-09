@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DemoAzureAd.Model\DemoAzureAd.Model.csproj" />
+    <ProjectReference Include="..\DemoAzureAd.UI.PersonalLog\DemoAzureAd.UI.PersonalLog.csproj" />
   </ItemGroup>
 
 </Project>
