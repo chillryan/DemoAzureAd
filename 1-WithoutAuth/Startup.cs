@@ -29,7 +29,7 @@ namespace DemoAzureAd.Site
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddDbContext<PersonalLogContext>(options => options.UseSqlServer(Configuration.GetConnectionString("CrewLogConnection")));
+            services.AddDbContext<PersonalLogContext>(options => options.UseSqlServer(Configuration.GetConnectionString("PersonalLogConnection")));
             services.BuildServiceProvider().GetService<PersonalLogContext>().Database.Migrate();
         }
 
