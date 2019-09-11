@@ -11,6 +11,6 @@ namespace DemoAzureAd.Model
             var conn = (SqlConnection)Database.GetDbConnection();
         }
 
-        public DbSet<LogEntry> Logs { get; set; }
+        public DbSet<LogEntry> LogEntries { get; set; }
     }
 }
