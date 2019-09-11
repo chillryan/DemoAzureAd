@@ -21,7 +21,7 @@ namespace DemoAzureAd.UI.PersonalLog.Pages.Logs
 
         public async Task<IActionResult> OnGetAsync()
         {
-            var inquiry = from l in _personalLog.Logs
+            var inquiry = from l in _personalLog.LogEntries
                           orderby l.Date
                           select l;
 

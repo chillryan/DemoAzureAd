@@ -15,11 +15,11 @@ namespace DemoAzureAd.UI.PersonalLog.Pages.Logs
         }
 
         [BindProperty]
-        public LogEntry PersonalLog { get; set; }
+        public LogEntry Entry { get; set; }
 
         public IActionResult OnGet()
         {
-            PersonalLog = new LogEntry
+            Entry = new LogEntry
             {
                 AccessLevel = AccessLevel.Supplemental,
                 Author = HttpContext.User.Identity.Name
@@ -35,7 +35,7 @@ namespace DemoAzureAd.UI.PersonalLog.Pages.Logs
                 return Page();
             }
 
-            _personalLog.Logs.Add(PersonalLog);
+            _personalLog.LogEntries.Add(Entry);
             await _personalLog.SaveChangesAsync();
 
             return RedirectToPage("./Index");
