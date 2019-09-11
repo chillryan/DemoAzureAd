@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DemoAzureAd.Model.Migrations
 {
     [DbContext(typeof(PersonalLogContext))]
-    [Migration("20190908020527_InitialCreate")]
+    [Migration("20190911184616_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,6 +28,8 @@ namespace DemoAzureAd.Model.Migrations
 
                     b.Property<int>("AccessLevel");
 
+                    b.Property<string>("Author");
+
                     b.Property<string>("Content");
 
                     b.Property<DateTime>("Date");
@@ -36,7 +38,7 @@ namespace DemoAzureAd.Model.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CrewLogs");
+                    b.ToTable("LogEntries");
                 });
 #pragma warning restore 612, 618
         }

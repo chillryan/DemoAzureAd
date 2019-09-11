@@ -8,25 +8,26 @@ namespace DemoAzureAd.Model.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "CrewLogs",
+                name: "LogEntries",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    Date = table.Column<DateTime>(nullable: false),
+                    AccessLevel = table.Column<int>(nullable: false),
+                    Author = table.Column<string>(nullable: true),
                     Content = table.Column<string>(nullable: true),
-                    Title = table.Column<string>(nullable: true),
-                    AccessLevel = table.Column<int>(nullable: false)
+                    Date = table.Column<DateTime>(nullable: false),
+                    Title = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CrewLogs", x => x.Id);
+                    table.PrimaryKey("PK_LogEntries", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CrewLogs");
+                name: "LogEntries");
         }
     }
 }

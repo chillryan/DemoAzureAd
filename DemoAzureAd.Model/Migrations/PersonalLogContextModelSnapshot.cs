@@ -4,16 +4,14 @@ using DemoAzureAd.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DemoAzureAd.Model.Migrations
 {
     [DbContext(typeof(PersonalLogContext))]
-    [Migration("20190908212613_Rename table to Log")]
-    partial class RenametabletoLog
+    partial class PersonalLogContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,7 +36,7 @@ namespace DemoAzureAd.Model.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Logs");
+                    b.ToTable("LogEntries");
                 });
 #pragma warning restore 612, 618
         }
