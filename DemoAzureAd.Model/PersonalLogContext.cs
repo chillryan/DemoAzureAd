@@ -1,4 +1,5 @@
 ﻿using System.Data.SqlClient;
+using Microsoft.Azure.Services.AppAuthentication;
 using Microsoft.EntityFrameworkCore;
 
 namespace DemoAzureAd.Model
@@ -9,6 +10,7 @@ namespace DemoAzureAd.Model
             :base(options)
         {
             var conn = (SqlConnection)Database.GetDbConnection();
+            conn.AccessToken = new AzureServiceTokenProvider().GetAccessTokenAsync("https://database.windows.net/").Result;
         }
 
         public DbSet<LogEntry> LogEntries { get; set; }
