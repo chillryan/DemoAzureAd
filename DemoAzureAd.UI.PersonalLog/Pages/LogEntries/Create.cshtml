@@ -8,6 +8,7 @@
 <h1>Create Log</h1>
 
 <form method="post">
+    <input type="hidden" asp-for="Entry.Author" />
     <div class="form-group">
         <label asp-for="Entry.Title" class="col-md-2 control-label"></label>
         <div class="col-md-10">
