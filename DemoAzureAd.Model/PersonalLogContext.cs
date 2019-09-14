@@ -1,6 +1,8 @@
-﻿using System.Data.SqlClient;
-using Microsoft.Azure.Services.AppAuthentication;
+﻿using Microsoft.Azure.Services.AppAuthentication;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace DemoAzureAd.Model
 {
@@ -10,7 +12,14 @@ namespace DemoAzureAd.Model
             :base(options)
         {
             var conn = (SqlConnection)Database.GetDbConnection();
-            conn.AccessToken = new AzureServiceTokenProvider().GetAccessTokenAsync("https://database.windows.net/").Result;
+            try
+            {
+                conn.AccessToken = new AzureServiceTokenProvider().GetAccessTokenAsync("https://database.windows.net/").Result;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Unable to retreive token: {ex}");
+            }
         }
 
         public DbSet<LogEntry> LogEntries { get; set; }
