@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace WebDemoNetCore.Site.Pages.Account
+namespace DemoAzureAd.Site.Pages.Account
 {
     public class AccessDeniedModel : PageModel
     {

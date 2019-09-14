@@ -3,5 +3,21 @@
 @{
     ViewData["Title"] = "Crew Personal Logs";
 }
- 
+
 <h1>Personal Logs</h1>
+<p>
+    <a asp-page="Create">Begin log</a>
+</p>
+
+<div class="container-fluid">
+    @foreach (var log in Model.LogEntries)
+    {
+        <div class="row">
+            <div class="col-sm-8">@Html.DisplayFor(item => log.Author) - @Html.DisplayFor(item => log.AccessLevel)</div>
+            <div class="col-sm-4">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-sm">@Html.DisplayFor(item => log.Content)</div>
+        </div>
+    }
+</div>

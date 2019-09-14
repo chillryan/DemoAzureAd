@@ -1,0 +1,16 @@
+﻿@using System.Security.Principal
+@using System.Security.Claims
+
+<ul class="navbar-nav navbar-right">
+    @if (User.Identity.IsAuthenticated)
+    {
+        var identity = User.Identity as ClaimsIdentity;
+        var preferredName = identity.Claims.FirstOrDefault(c => c.Type == "preferred_username")?.Value;
+        <li class="navbar-text">Welcome aboard, @preferredName!</li>
+        <li><a asp-area="AzureAD" asp-controller="Account" asp-action="SignOut">Sign out</a></li>
+    }
+    else
+    {
+        <li><a asp-area="AzureAD" asp-controller="Account" asp-action="SignIn">Sign in</a></li>
+    }
+</ul>
